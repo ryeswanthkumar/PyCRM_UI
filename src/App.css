@@ -1,0 +1,1547 @@
+/* ================================================================
+   PYCRM UI SYSTEM
+   Visual-only layer. No business logic or state is changed here.
+   ================================================================ */
+
+/* ---------- App shell ---------- */
+.pycrm-app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% -10%, rgba(79,70,229,.08), transparent 28%),
+    radial-gradient(circle at 92% 0%, rgba(14,165,233,.055), transparent 24%),
+    var(--color-bg-primary);
+}
+
+.dark .pycrm-app {
+  background:
+    radial-gradient(circle at 8% -10%, rgba(99,102,241,.12), transparent 28%),
+    radial-gradient(circle at 92% 0%, rgba(34,211,238,.07), transparent 24%),
+    var(--color-bg-primary);
+}
+
+/* ---------- Global surface polish ---------- */
+.pycrm-app .bg-bg-card,
+.pycrm-app .glass-panel {
+  background: var(--color-bg-card) !important;
+  border-color: var(--color-border-primary) !important;
+}
+
+.pycrm-app .shadow-premium {
+  box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.045) !important;
+}
+
+.dark .pycrm-app .shadow-premium {
+  box-shadow: 0 1px 2px rgba(0,0,0,.24), 0 12px 30px rgba(0,0,0,.18) !important;
+}
+
+.pycrm-app button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pycrm-app button:not(:disabled) {
+  transition: transform .16s ease, background-color .16s ease, border-color .16s ease,
+    color .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
+
+.pycrm-app button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.pycrm-app input,
+.pycrm-app select,
+.pycrm-app textarea {
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border-primary);
+  outline: none;
+}
+
+.pycrm-app input::placeholder,
+.pycrm-app textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: .9;
+}
+
+.pycrm-app input:focus,
+.pycrm-app select:focus,
+.pycrm-app textarea:focus {
+  border-color: var(--color-accent-orange) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-orange) 14%, transparent);
+}
+
+.pycrm-app select option {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+}
+
+/* Make Tailwind's slate text readable in both themes without touching logic. */
+.pycrm-app .text-slate-200 { color: var(--color-text-primary) !important; }
+.pycrm-app .text-slate-300 { color: var(--color-text-secondary) !important; }
+.pycrm-app .text-slate-400,
+.pycrm-app .text-slate-500,
+.pycrm-app .text-slate-600 { color: var(--color-text-muted) !important; }
+
+/* ---------- Navigation ---------- */
+.pycrm-app > div > .bg-accent-navy {
+  background: linear-gradient(90deg, #111827 0%, #1e1b4b 55%, #172554 100%) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.08);
+}
+
+.dark .pycrm-app > div > .bg-accent-navy {
+  background: linear-gradient(90deg, #080d18 0%, #10162a 55%, #0b1222 100%) !important;
+}
+
+/* ---------- Dashboard ---------- */
+.pycrm-dashboard {
+  color: var(--color-text-primary) !important;
+}
+
+.pycrm-dashboard .pycrm-hero {
+  min-height: 220px;
+  border: 1px solid rgba(99,102,241,.25) !important;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(99,102,241,.22), transparent 28%),
+    radial-gradient(circle at 100% 100%, rgba(14,165,233,.14), transparent 34%),
+    linear-gradient(135deg, #0b1020 0%, #111827 52%, #17133a 100%) !important;
+  box-shadow: 0 20px 55px rgba(15,23,42,.18) !important;
+}
+
+.pycrm-dashboard .pycrm-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(129,140,248,.55), transparent);
+}
+
+.pycrm-dashboard .pycrm-mini-chip {
+  min-width: 132px;
+  padding: 9px 11px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.pycrm-dashboard .pycrm-mini-chip span {
+  display: block;
+  color: #94a3b8 !important;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 700;
+}
+
+.pycrm-dashboard .pycrm-mini-chip strong {
+  display: block;
+  margin-top: 3px;
+  color: #f8fafc !important;
+  font-size: 11px;
+}
+
+.pycrm-dashboard .pycrm-score-card {
+  min-width: 175px;
+  padding: 16px;
+  border: 1px solid rgba(129,140,248,.25);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(99,102,241,.18), rgba(255,255,255,.045));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.pycrm-dashboard .pycrm-kpi,
+.pycrm-dashboard .pycrm-panel,
+.pycrm-dashboard .pycrm-small-stat,
+.pycrm-dashboard .pycrm-candidate {
+  border: 1px solid var(--color-border-primary) !important;
+  background: var(--color-bg-card) !important;
+  box-shadow: 0 1px 2px rgba(16,24,40,.035), 0 8px 24px rgba(16,24,40,.035) !important;
+}
+
+.dark .pycrm-dashboard .pycrm-kpi,
+.dark .pycrm-dashboard .pycrm-panel,
+.dark .pycrm-dashboard .pycrm-small-stat,
+.dark .pycrm-dashboard .pycrm-candidate {
+  box-shadow: 0 10px 30px rgba(0,0,0,.18) !important;
+}
+
+.pycrm-dashboard .pycrm-kpi {
+  position: relative;
+  min-height: 116px;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.pycrm-dashboard .pycrm-kpi::after {
+  content: '';
+  position: absolute;
+  right: -26px;
+  bottom: -32px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--kpi-color, #6366f1) 9%, transparent);
+}
+
+.pycrm-dashboard .pycrm-kpi-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--kpi-color, #6366f1) 12%, var(--color-bg-secondary));
+  color: var(--kpi-color, #6366f1);
+}
+
+.pycrm-dashboard .pycrm-kpi:nth-child(1) { --kpi-color: #6366f1; }
+.pycrm-dashboard .pycrm-kpi:nth-child(2) { --kpi-color: #0ea5e9; }
+.pycrm-dashboard .pycrm-kpi:nth-child(3) { --kpi-color: #10b981; }
+.pycrm-dashboard .pycrm-kpi:nth-child(4) { --kpi-color: #f59e0b; }
+
+.pycrm-dashboard .pycrm-panel {
+  border-radius: 17px;
+  padding: 16px;
+}
+
+.pycrm-dashboard .pycrm-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.pycrm-dashboard .pycrm-panel-head h3 {
+  margin-top: 2px;
+  color: var(--color-text-primary) !important;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: -.01em;
+}
+
+.pycrm-dashboard .pycrm-eyebrow {
+  color: var(--color-text-muted) !important;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.pycrm-dashboard .pycrm-small-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 11px;
+  border-radius: 12px;
+}
+
+.pycrm-dashboard .pycrm-donut {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(#10b981 var(--pct), var(--color-border-primary) 0);
+}
+
+.pycrm-dashboard .pycrm-donut::before {
+  content: '';
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+}
+
+.pycrm-dashboard .pycrm-donut span {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-primary) !important;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.pycrm-dashboard .pycrm-alert {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 9px 10px;
+  border-radius: 11px;
+  border: 1px solid var(--alert-border);
+  background: var(--alert-bg);
+  color: var(--alert-text) !important;
+  font-size: 10px;
+  font-weight: 650;
+}
+.pycrm-dashboard .pycrm-alert.red { --alert-border: rgba(239,68,68,.2); --alert-bg: rgba(239,68,68,.06); --alert-text: #dc2626; }
+.pycrm-dashboard .pycrm-alert.yellow { --alert-border: rgba(245,158,11,.22); --alert-bg: rgba(245,158,11,.07); --alert-text: #b45309; }
+.pycrm-dashboard .pycrm-alert.purple { --alert-border: rgba(124,58,237,.2); --alert-bg: rgba(124,58,237,.07); --alert-text: #7c3aed; }
+.dark .pycrm-dashboard .pycrm-alert.red { --alert-text: #fca5a5; }
+.dark .pycrm-dashboard .pycrm-alert.yellow { --alert-text: #fcd34d; }
+.dark .pycrm-dashboard .pycrm-alert.purple { --alert-text: #c4b5fd; }
+
+.pycrm-dashboard .pycrm-search-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.6fr) repeat(3, minmax(150px, 1fr));
+  gap: 9px;
+}
+
+.pycrm-dashboard .pycrm-input-wrap { position: relative; }
+.pycrm-dashboard .pycrm-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.pycrm-dashboard .pycrm-input,
+.pycrm-dashboard .pycrm-select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--color-border-primary) !important;
+  border-radius: 11px;
+  background: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+  font-size: 11px;
+  box-shadow: inset 0 1px 1px rgba(16,24,40,.025);
+}
+
+.pycrm-dashboard .pycrm-input { padding-right: 12px; }
+.pycrm-dashboard .pycrm-filter {
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: 9px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pycrm-dashboard .pycrm-filter:hover,
+.pycrm-dashboard .pycrm-filter.active {
+  border-color: color-mix(in srgb, var(--color-accent-orange) 45%, var(--color-border-primary));
+  background: color-mix(in srgb, var(--color-accent-orange) 9%, var(--color-bg-secondary));
+  color: var(--color-accent-orange) !important;
+}
+
+.pycrm-dashboard .pycrm-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 6px 12px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white !important;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(79,70,229,.18);
+}
+.pycrm-dashboard .pycrm-send:hover { box-shadow: 0 8px 20px rgba(79,70,229,.25); transform: translateY(-1px); }
+
+.pycrm-dashboard .pycrm-candidate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 70px;
+  padding: 12px 13px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.pycrm-dashboard .pycrm-candidate:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 35%, var(--color-border-primary)) !important;
+  box-shadow: 0 10px 24px rgba(79,70,229,.08) !important;
+}
+
+.pycrm-dashboard .pycrm-status {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+.pycrm-dashboard .pycrm-status.approved { color: #059669 !important; background: rgba(16,185,129,.08); }
+.pycrm-dashboard .pycrm-status.pending { color: #b45309 !important; background: rgba(245,158,11,.09); }
+.pycrm-dashboard .pycrm-status.rejected { color: #dc2626 !important; background: rgba(239,68,68,.08); }
+.pycrm-dashboard .pycrm-status.neutral { color: var(--color-text-muted) !important; background: var(--color-bg-hover); }
+.dark .pycrm-dashboard .pycrm-status.approved { color: #6ee7b7 !important; }
+.dark .pycrm-dashboard .pycrm-status.pending { color: #fcd34d !important; }
+.dark .pycrm-dashboard .pycrm-status.rejected { color: #fca5a5 !important; }
+
+.pycrm-dashboard .pycrm-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 120px;
+  border: 1px dashed var(--color-border-primary);
+  border-radius: 13px;
+  background: var(--color-bg-secondary);
+}
+
+/* Dashboard's original slate/white classes were authored for the previous dark-only skin. */
+.pycrm-dashboard .text-white { color: var(--color-text-primary) !important; }
+.pycrm-dashboard .text-slate-200 { color: var(--color-text-primary) !important; }
+.pycrm-dashboard .text-slate-300 { color: var(--color-text-secondary) !important; }
+.pycrm-dashboard .text-slate-400,
+.pycrm-dashboard .text-slate-500 { color: var(--color-text-muted) !important; }
+.pycrm-dashboard .bg-white\/\[\.025\] { background: var(--color-bg-secondary) !important; }
+.pycrm-dashboard .border-white\/5 { border-color: var(--color-border-secondary) !important; }
+
+/* ---------- Other pages: consistent enterprise surfaces ---------- */
+.pycrm-app main > div {
+  color: var(--color-text-primary);
+}
+
+.pycrm-app main > div > .rounded-2xl,
+.pycrm-app main > div > .rounded-xl {
+  border-color: var(--color-border-primary);
+}
+
+.pycrm-app main .bg-bg-secondary {
+  background: var(--color-bg-secondary) !important;
+}
+
+.pycrm-app main .bg-bg-primary {
+  background: var(--color-bg-primary) !important;
+}
+
+.pycrm-app main .border-border-primary,
+.pycrm-app main .border-border-secondary {
+  border-color: var(--color-border-primary) !important;
+}
+
+/* Standard action hierarchy. */
+.pycrm-app button.bg-accent-orange,
+.pycrm-app button.bg-accent-green {
+  color: #fff !important;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 14px rgba(79,70,229,.14);
+  font-weight: 750;
+}
+
+.pycrm-app button.bg-accent-orange { background: linear-gradient(135deg, #6366f1, #4f46e5) !important; }
+.pycrm-app button.bg-accent-orange:hover { background: linear-gradient(135deg, #4f46e5, #4338ca) !important; transform: translateY(-1px); }
+.pycrm-app button.bg-accent-green { background: linear-gradient(135deg, #10b981, #059669) !important; box-shadow: 0 5px 14px rgba(16,185,129,.14); }
+.pycrm-app button.bg-accent-green:hover { background: linear-gradient(135deg, #059669, #047857) !important; transform: translateY(-1px); }
+
+.pycrm-app .rounded-xl.border.border-border-primary.bg-bg-card,
+.pycrm-app .rounded-2xl.border.border-border-primary.bg-bg-card {
+  box-shadow: 0 1px 2px rgba(16,24,40,.03), 0 8px 22px rgba(16,24,40,.035);
+}
+
+.dark .pycrm-app .rounded-xl.border.border-border-primary.bg-bg-card,
+.dark .pycrm-app .rounded-2xl.border.border-border-primary.bg-bg-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,.16);
+}
+
+/* ---------- Tables ---------- */
+.pycrm-app table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.pycrm-app thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-muted) !important;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border-primary);
+}
+.pycrm-app tbody tr { transition: background-color .15s ease; }
+.pycrm-app tbody tr:hover { background: color-mix(in srgb, var(--color-accent-orange) 4%, var(--color-bg-card)); }
+.pycrm-app td { border-bottom-color: var(--color-border-secondary) !important; }
+
+/* ---------- Modals / overlays ---------- */
+.pycrm-app .fixed.inset-0.bg-black\/45,
+.pycrm-app .fixed.inset-0.bg-black\/40 {
+  background: rgba(2,6,23,.58) !important;
+}
+
+.pycrm-app .fixed.inset-0 > .bg-bg-card {
+  border-color: var(--color-border-primary) !important;
+  box-shadow: 0 24px 80px rgba(2,6,23,.24) !important;
+}
+
+/* ---------- Responsive refinement ---------- */
+@media (max-width: 1023px) {
+  .pycrm-dashboard .pycrm-search-row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 639px) {
+  .pycrm-dashboard .pycrm-search-row { grid-template-columns: 1fr; }
+  .pycrm-dashboard .pycrm-hero { padding: 18px !important; min-height: 0; }
+  .pycrm-dashboard .pycrm-kpi { min-height: 100px; }
+  .pycrm-dashboard .pycrm-panel { padding: 13px; }
+}
+
+/* ================================================================
+   PYCRM ENTERPRISE UI PASS
+   Presentation-only layer. Existing data, state and handlers remain unchanged.
+   ================================================================ */
+
+/* ---------- Shared page framing ---------- */
+.pycrm-page {
+  position: relative;
+  isolation: isolate;
+}
+
+.pycrm-page::before {
+  content: '';
+  position: absolute;
+  inset: 0 2% auto;
+  height: 180px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(99,102,241,.07), transparent 65%);
+}
+
+.dark .pycrm-page::before {
+  background: radial-gradient(circle at 50% 0%, rgba(99,102,241,.10), transparent 65%);
+}
+
+/* ---------- Final hero readability ---------- */
+.pycrm-dashboard .pycrm-hero .text-white { color: #ffffff !important; }
+.pycrm-dashboard .pycrm-hero .text-slate-300 { color: #cbd5e1 !important; }
+.pycrm-dashboard .pycrm-hero .text-slate-400 { color: #94a3b8 !important; }
+.pycrm-dashboard .pycrm-hero .text-violet-300 { color: #c4b5fd !important; }
+.pycrm-dashboard .pycrm-hero .text-emerald-300 { color: #6ee7b7 !important; }
+.pycrm-dashboard .pycrm-hero > .absolute { z-index: 1; }
+.pycrm-dashboard .pycrm-hero > .relative { position: relative; z-index: 2; }
+
+/* ---------- Dashboard: executive hierarchy ---------- */
+.pycrm-dashboard { max-width: 1680px; margin-inline: auto; }
+.pycrm-dashboard .pycrm-hero {
+  min-height: 228px;
+  border-radius: 22px !important;
+  box-shadow: 0 24px 70px rgba(15,23,42,.16) !important;
+}
+
+.dark .pycrm-dashboard .pycrm-hero {
+  box-shadow: 0 28px 80px rgba(0,0,0,.28) !important;
+}
+
+.pycrm-dashboard .pycrm-kpi {
+  min-height: 124px;
+  border-radius: 17px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.pycrm-dashboard .pycrm-kpi:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--kpi-color, #6366f1) 28%, var(--color-border-primary)) !important;
+}
+
+.pycrm-dashboard .pycrm-panel {
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.03), 0 14px 34px rgba(16,24,40,.045) !important;
+}
+.dark .pycrm-dashboard .pycrm-panel {
+  box-shadow: 0 14px 38px rgba(0,0,0,.18) !important;
+}
+
+.pycrm-dashboard .pycrm-small-stat {
+  min-height: 68px;
+  border-radius: 14px;
+  transition: transform .16s ease, border-color .16s ease;
+}
+.pycrm-dashboard .pycrm-small-stat:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 22%, var(--color-border-primary)) !important;
+}
+
+.pycrm-dashboard .pycrm-metric-mini {
+  min-height: 60px;
+  padding: 10px 11px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-bg-secondary) 88%, var(--color-accent-orange) 12%);
+}
+.pycrm-dashboard .pycrm-metric-mini div {
+  color: var(--color-text-muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 800;
+}
+.pycrm-dashboard .pycrm-metric-mini strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--color-text-primary);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.pycrm-dashboard .pycrm-data-empty {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed var(--color-border-primary);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--color-bg-secondary) 88%, var(--color-accent-orange) 12%);
+}
+.pycrm-dashboard .pycrm-data-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  color: var(--color-accent-orange);
+  background: color-mix(in srgb, var(--color-accent-orange) 10%, var(--color-bg-secondary));
+  border: 1px solid color-mix(in srgb, var(--color-accent-orange) 16%, var(--color-border-primary));
+}
+
+/* ---------- Dashboard candidate command cards ---------- */
+.pycrm-dashboard .pycrm-candidate {
+  min-height: 82px;
+  border-radius: 14px;
+  padding: 13px 14px;
+}
+.pycrm-dashboard .pycrm-candidate::before {
+  content: '';
+  width: 3px;
+  align-self: stretch;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-accent-orange) 75%, transparent);
+  opacity: .75;
+}
+
+/* ---------- Shared enterprise buttons ---------- */
+.pycrm-app button.bg-accent-orange,
+.pycrm-app button.bg-accent-green {
+  min-height: 38px;
+  border-radius: 10px;
+}
+
+.pycrm-app button:not(.rounded-full):not(.pycrm-filter):not(.pycrm-send):hover {
+  transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease;
+}
+
+/* ---------- Shared cards ---------- */
+.pycrm-page > div,
+.pycrm-page > section {
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.pycrm-page .shadow-premium,
+.pycrm-page .shadow-glass {
+  box-shadow: 0 1px 2px rgba(16,24,40,.035), 0 14px 32px rgba(16,24,40,.045) !important;
+}
+.dark .pycrm-page .shadow-premium,
+.dark .pycrm-page .shadow-glass {
+  box-shadow: 0 16px 40px rgba(0,0,0,.19) !important;
+}
+
+/* ---------- Direct Placement ---------- */
+.pycrm-direct-placement > div:first-child h1,
+.pycrm-backup h1,
+.pycrm-reports h1 {
+  letter-spacing: -.035em;
+}
+
+.pycrm-direct-placement > div:first-child,
+.pycrm-backup > div:first-child,
+.pycrm-reports > div:first-child {
+  padding: 4px 2px 2px;
+}
+
+.pycrm-direct-placement > div:first-child::after {
+  content: 'Candidate operations • approvals • collections';
+  display: block;
+  margin-top: 10px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.pycrm-direct-placement .grid.grid-cols-1.sm\:grid-cols-3 > div {
+  position: relative;
+  overflow: hidden;
+  min-height: 112px;
+  border-radius: 17px !important;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.pycrm-direct-placement .grid.grid-cols-1.sm\:grid-cols-3 > div:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 25%, var(--color-border-primary)) !important;
+}
+.pycrm-direct-placement .grid.grid-cols-1.sm\:grid-cols-3 > div::after {
+  content: '';
+  position: absolute;
+  right: -22px;
+  bottom: -28px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent-orange) 8%, transparent);
+}
+
+/* Search / filter console */
+.pycrm-direct-placement > .rounded-2xl.border.border-border-primary.bg-bg-card {
+  border-radius: 18px !important;
+  box-shadow: 0 12px 30px rgba(16,24,40,.045) !important;
+}
+.pycrm-direct-placement input,
+.pycrm-direct-placement select {
+  min-height: 40px;
+  border-radius: 10px !important;
+}
+.pycrm-direct-placement input:focus,
+.pycrm-direct-placement select:focus {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent-orange) 11%, transparent) !important;
+}
+
+/* Candidate result cards / rows */
+.pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2.xl\:grid-cols-3 > div,
+.pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2 > div {
+  border-radius: 16px !important;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2.xl\:grid-cols-3 > div:hover,
+.pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 25%, var(--color-border-primary)) !important;
+  box-shadow: 0 14px 30px rgba(16,24,40,.07) !important;
+}
+.dark .pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2.xl\:grid-cols-3 > div:hover,
+.dark .pycrm-direct-placement .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+  box-shadow: 0 16px 34px rgba(0,0,0,.22) !important;
+}
+
+/* ---------- Reports ---------- */
+.pycrm-reports {
+  max-width: 1500px;
+}
+.pycrm-reports > div:first-child {
+  padding-bottom: 2px;
+}
+.pycrm-reports > div:first-child::after {
+  content: 'Financial intelligence • placement performance • risk signals';
+  display: block;
+  margin-top: 9px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.pycrm-reports > .flex.flex-col.lg\:flex-row {
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child {
+  position: sticky;
+  top: 88px;
+  width: 270px;
+  border-radius: 18px !important;
+  padding: 10px !important;
+}
+.pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child button {
+  min-height: 42px;
+  border-radius: 11px !important;
+  font-weight: 650;
+}
+.pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child button:hover {
+  transform: translateX(2px);
+}
+.pycrm-reports > .flex.flex-col.lg\:flex-row > div:last-child {
+  min-width: 0;
+  border-radius: 18px !important;
+  padding: 22px !important;
+  box-shadow: 0 14px 34px rgba(16,24,40,.045) !important;
+}
+.dark .pycrm-reports > .flex.flex-col.lg\:flex-row > div:last-child {
+  box-shadow: 0 18px 42px rgba(0,0,0,.2) !important;
+}
+
+.pycrm-reports table tbody td {
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+}
+.pycrm-reports table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-accent-orange) 4%, var(--color-bg-card)) !important;
+}
+
+/* ---------- Backup Center ---------- */
+.pycrm-backup {
+  max-width: 1500px;
+}
+.pycrm-backup > div:first-child {
+  padding-bottom: 2px;
+}
+.pycrm-backup > div:first-child::after {
+  content: 'Controlled exports • monthly snapshots • operational continuity';
+  display: block;
+  margin-top: 9px;
+  margin-left: 39px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.pycrm-backup .grid.grid-cols-1.md\:grid-cols-2 > div {
+  position: relative;
+  overflow: hidden;
+  min-height: 176px;
+  border-radius: 18px !important;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.pycrm-backup .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 28%, var(--color-border-primary)) !important;
+  box-shadow: 0 16px 36px rgba(16,24,40,.07) !important;
+}
+.pycrm-backup .grid.grid-cols-1.md\:grid-cols-2 > div::after {
+  content: '';
+  position: absolute;
+  right: -28px;
+  top: -32px;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent-orange) 7%, transparent);
+  pointer-events: none;
+}
+.pycrm-backup .grid.grid-cols-1.md\:grid-cols-2 > div button {
+  min-height: 42px;
+  border-radius: 11px !important;
+}
+
+/* ---------- Public student portal ---------- */
+.pycrm-public {
+  max-width: 900px;
+  min-height: calc(100vh - 120px);
+}
+.pycrm-public::after {
+  content: '';
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,.10), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
+}
+.pycrm-public > div:first-child {
+  padding-top: 16px;
+}
+.pycrm-public > div:first-child h1 {
+  font-size: clamp(24px, 4vw, 34px);
+  letter-spacing: -.04em;
+}
+.pycrm-public > div:first-child::before {
+  content: 'PYCRM STUDENT PORTAL';
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 9px;
+  margin-bottom: 9px;
+  border-radius: 999px;
+  color: var(--color-accent-orange);
+  background: color-mix(in srgb, var(--color-accent-orange) 9%, var(--color-bg-secondary));
+  border: 1px solid color-mix(in srgb, var(--color-accent-orange) 16%, var(--color-border-primary));
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+.pycrm-public form,
+.pycrm-public .rounded-2xl.border.border-border-primary.bg-bg-card {
+  border-radius: 20px !important;
+  box-shadow: 0 18px 44px rgba(16,24,40,.055) !important;
+}
+.dark .pycrm-public form,
+.dark .pycrm-public .rounded-2xl.border.border-border-primary.bg-bg-card {
+  box-shadow: 0 20px 48px rgba(0,0,0,.23) !important;
+}
+.pycrm-public input,
+.pycrm-public select,
+.pycrm-public textarea {
+  min-height: 44px;
+  border-radius: 11px !important;
+}
+.pycrm-public label {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  letter-spacing: .02em;
+}
+.pycrm-public .grid {
+  row-gap: 15px;
+}
+
+/* ---------- Student 360 ---------- */
+.pycrm-student-detail {
+  max-width: 1500px;
+  margin-inline: auto;
+}
+.pycrm-student-detail > div:first-child {
+  padding: 6px 0 14px;
+}
+.pycrm-student-detail > div:first-child h1,
+.pycrm-student-detail > div:first-child h2,
+.pycrm-student-detail > div:first-child h3 {
+  letter-spacing: -.025em;
+}
+.pycrm-student-detail .rounded-xl.border.border-border-primary.bg-bg-card,
+.pycrm-student-detail .rounded-2xl.border.border-border-primary.bg-bg-card {
+  border-radius: 17px !important;
+}
+.pycrm-student-detail .grid.grid-cols-1.lg\:grid-cols-3 > div > .rounded-xl,
+.pycrm-student-detail .grid.grid-cols-1.lg\:grid-cols-3 > div > .rounded-2xl {
+  box-shadow: 0 12px 30px rgba(16,24,40,.04) !important;
+}
+.dark .pycrm-student-detail .grid.grid-cols-1.lg\:grid-cols-3 > div > .rounded-xl,
+.dark .pycrm-student-detail .grid.grid-cols-1.lg\:grid-cols-3 > div > .rounded-2xl {
+  box-shadow: 0 14px 34px rgba(0,0,0,.18) !important;
+}
+.pycrm-student-detail table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-accent-orange) 4%, var(--color-bg-card));
+}
+.pycrm-student-detail button:not(.rounded-full) {
+  border-radius: 10px;
+}
+
+/* ---------- Sidebar ---------- */
+.pycrm-app aside.fixed.w-64 {
+  width: 256px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-bg-card) 96%, var(--color-accent-orange) 4%), var(--color-bg-card)) !important;
+  box-shadow: 10px 0 35px rgba(16,24,40,.025);
+}
+.dark .pycrm-app aside.fixed.w-64 {
+  box-shadow: 10px 0 40px rgba(0,0,0,.16);
+}
+.pycrm-app aside.fixed.w-64 > div:first-child {
+  min-height: 78px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-card) 94%, var(--color-accent-orange) 6%), var(--color-bg-card));
+}
+.pycrm-app aside.fixed.w-64 nav,
+.pycrm-app aside.fixed.w-64 .flex-1 {
+  scrollbar-width: thin;
+}
+.pycrm-app aside.fixed.w-64 nav button,
+.pycrm-app aside.fixed.w-64 .flex-1 > div button {
+  min-height: 42px;
+  border-radius: 11px;
+}
+.pycrm-app aside.fixed.w-64 nav button:hover {
+  transform: translateX(2px);
+}
+.pycrm-app aside.fixed.w-64 nav button.bg-accent-orange,
+.pycrm-app aside.fixed.w-64 nav button[class*="bg-accent-orange"] {
+  box-shadow: 0 8px 20px rgba(79,70,229,.16);
+}
+
+/* ---------- Navbar ---------- */
+.pycrm-app header.sticky {
+  min-height: 64px;
+  background: color-mix(in srgb, var(--color-bg-card) 88%, transparent) !important;
+  box-shadow: 0 1px 0 var(--color-border-primary), 0 8px 24px rgba(16,24,40,.025);
+}
+.dark .pycrm-app header.sticky {
+  box-shadow: 0 1px 0 var(--color-border-primary), 0 10px 28px rgba(0,0,0,.10);
+}
+.pycrm-app header.sticky button {
+  border-radius: 10px;
+}
+
+/* ---------- Presentation bar ---------- */
+.pycrm-app > div > .bg-accent-navy {
+  min-height: 38px;
+  background: linear-gradient(90deg, #111827 0%, #1e1b4b 58%, #172554 100%) !important;
+}
+.pycrm-app > div > .bg-accent-navy button {
+  min-height: 28px;
+  border-radius: 8px;
+}
+
+/* ---------- Tables: enterprise density ---------- */
+.pycrm-app table {
+  border: 1px solid var(--color-border-primary);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.pycrm-app table thead th {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  background: var(--color-bg-secondary) !important;
+}
+.pycrm-app table tbody td {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+.pycrm-app table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+/* ---------- Inputs ---------- */
+.pycrm-app input,
+.pycrm-app select,
+.pycrm-app textarea {
+  transition: border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+}
+.pycrm-app input:hover,
+.pycrm-app select:hover,
+.pycrm-app textarea:hover {
+  border-color: color-mix(in srgb, var(--color-accent-orange) 22%, var(--color-border-primary));
+}
+
+/* ---------- Modals ---------- */
+.pycrm-app .fixed.inset-0 > .bg-bg-card {
+  border-radius: 20px !important;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+.pycrm-app .fixed.inset-0 > .bg-bg-card h3 {
+  letter-spacing: -.02em;
+}
+
+/* ---------- Audit drawer ---------- */
+.pycrm-audit-drawer {
+  width: min(460px, 100vw) !important;
+  box-shadow: -22px 0 70px rgba(2,6,23,.22) !important;
+}
+.pycrm-audit-drawer > div:first-child {
+  min-height: 78px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-card) 94%, var(--color-accent-orange) 6%), var(--color-bg-card));
+}
+.pycrm-audit-drawer .p-4.rounded-xl.border {
+  border-radius: 14px !important;
+  transition: transform .16s ease, border-color .16s ease;
+}
+.pycrm-audit-drawer .p-4.rounded-xl.border:hover {
+  transform: translateX(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 22%, var(--color-border-primary)) !important;
+}
+
+/* ---------- Demo settings ---------- */
+.pycrm-dev-panel .rounded-2xl.border.border-border-primary.bg-bg-card {
+  border-radius: 18px !important;
+  box-shadow: 0 24px 70px rgba(2,6,23,.22) !important;
+}
+.pycrm-dev-panel > button {
+  box-shadow: 0 12px 30px rgba(79,70,229,.25) !important;
+}
+
+/* ---------- Status chips ---------- */
+.pycrm-app .rounded-full[class*="text-green"],
+.pycrm-app .rounded-full[class*="text-emerald"] {
+  font-weight: 750;
+}
+
+/* ---------- Empty states ---------- */
+.pycrm-app .text-center.py-6,
+.pycrm-app .text-center.py-8,
+.pycrm-app .text-center.py-10,
+.pycrm-app .text-center.py-12 {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Mobile / tablet ---------- */
+@media (max-width: 1023px) {
+  .pycrm-app main { padding-inline: 14px !important; }
+  .pycrm-page { padding-inline: 4px !important; }
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child {
+    position: relative;
+    top: auto;
+    width: 100%;
+  }
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child > span {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 639px) {
+  .pycrm-app main { padding-inline: 10px !important; }
+  .pycrm-page { padding-inline: 0 !important; }
+  .pycrm-dashboard { padding-top: 10px !important; }
+  .pycrm-dashboard .pycrm-hero { min-height: 0; padding: 18px !important; }
+  .pycrm-dashboard .pycrm-hero h1 { font-size: 27px !important; line-height: 1.12; }
+  .pycrm-dashboard .pycrm-score-card { min-width: 0; width: 100%; }
+  .pycrm-direct-placement > div:first-child::after { display: none; }
+  .pycrm-backup > div:first-child::after { display: none; }
+  .pycrm-reports > div:first-child::after { display: none; }
+  .pycrm-public { padding-inline: 4px !important; }
+  .pycrm-public > div:first-child h1 { font-size: 24px; }
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child { grid-template-columns: 1fr; }
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:last-child { padding: 14px !important; }
+  .pycrm-audit-drawer { width: 100% !important; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pycrm-app * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+/* ================================================================
+   PYCRM FINAL PRODUCT PASS
+   Presentation-only refinements. No business logic or store state.
+   ================================================================ */
+
+html {
+  overflow-x: hidden;
+  background: var(--color-bg-primary);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.pycrm-app {
+  isolation: isolate;
+}
+
+.pycrm-app main {
+  min-width: 0;
+}
+
+/* Keep content comfortable on very wide monitors. */
+.pycrm-dashboard,
+.pycrm-page {
+  width: 100%;
+}
+
+/* ---------------- Dashboard hero ---------------- */
+.pycrm-dashboard .pycrm-hero {
+  isolation: isolate;
+}
+
+.pycrm-dashboard .pycrm-hero > .absolute {
+  pointer-events: none;
+}
+
+.pycrm-dashboard .pycrm-hero h1 {
+  max-width: 780px;
+  text-wrap: balance;
+}
+
+.pycrm-dashboard .pycrm-score-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------------- Dashboard action center ---------------- */
+.pycrm-action-center {
+  min-width: 0;
+}
+
+.pycrm-action-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  min-height: 72px;
+  padding: 12px 13px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: 16px;
+  background: var(--color-bg-card);
+  box-shadow: 0 1px 2px rgba(16,24,40,.03), 0 8px 22px rgba(16,24,40,.035);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.pycrm-action-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-orange) 25%, var(--color-border-primary));
+  box-shadow: 0 12px 30px rgba(16,24,40,.07);
+}
+
+.dark .pycrm-action-card {
+  box-shadow: 0 10px 28px rgba(0,0,0,.15);
+}
+
+.dark .pycrm-action-card:hover {
+  box-shadow: 0 16px 36px rgba(0,0,0,.22);
+}
+
+.pycrm-action-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+}
+
+.pycrm-action-icon.amber { color: #d97706; background: rgba(245,158,11,.10); }
+.pycrm-action-icon.red { color: #dc2626; background: rgba(239,68,68,.09); }
+.pycrm-action-icon.violet { color: #7c3aed; background: rgba(124,58,237,.09); }
+.dark .pycrm-action-icon.amber { color: #fcd34d; }
+.dark .pycrm-action-icon.red { color: #fca5a5; }
+.dark .pycrm-action-icon.violet { color: #c4b5fd; }
+
+.pycrm-action-card p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pycrm-action-card span {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.pycrm-action-count {
+  margin-top: 0 !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+}
+
+.pycrm-action-count.amber { color: #d97706; }
+.pycrm-action-count.red { color: #dc2626; }
+.pycrm-action-count.violet { color: #7c3aed; }
+.dark .pycrm-action-count.amber { color: #fcd34d; }
+.dark .pycrm-action-count.red { color: #fca5a5; }
+.dark .pycrm-action-count.violet { color: #c4b5fd; }
+
+.pycrm-env-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 10px;
+  background: var(--color-bg-secondary);
+}
+
+.pycrm-env-row span {
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.pycrm-env-row strong {
+  color: var(--color-text-primary);
+  font-size: 10px;
+}
+
+/* ---------------- Dashboard candidate cards ---------------- */
+.pycrm-dashboard .pycrm-candidate {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 76px;
+  padding: 12px 13px;
+}
+
+.pycrm-dashboard .pycrm-candidate h4,
+.pycrm-dashboard .pycrm-candidate p {
+  min-width: 0;
+}
+
+/* ---------------- Sidebar ---------------- */
+.pycrm-app aside.fixed.w-64 {
+  overflow: hidden;
+}
+
+.pycrm-app aside.fixed.w-64 nav {
+  overscroll-behavior: contain;
+}
+
+.pycrm-app aside.fixed.w-64 nav button {
+  touch-action: manipulation;
+}
+
+/* ---------------- Navbar ---------------- */
+.pycrm-app header.sticky {
+  min-width: 0;
+}
+
+.pycrm-app header.sticky > div {
+  min-width: 0;
+}
+
+/* ---------------- Reports ---------------- */
+.pycrm-reports {
+  min-width: 0;
+}
+
+.pycrm-reports .overflow-x-auto,
+.pycrm-direct-placement .overflow-x-auto,
+.pycrm-student-detail .overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-text-muted) 35%, transparent) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pycrm-reports table,
+.pycrm-direct-placement table,
+.pycrm-student-detail table {
+  min-width: 620px;
+}
+
+/* ---------------- Direct placement ---------------- */
+.pycrm-direct-placement {
+  min-width: 0;
+}
+
+.pycrm-direct-placement > div:first-child {
+  min-width: 0;
+}
+
+.pycrm-direct-placement .grid {
+  min-width: 0;
+}
+
+/* ---------------- Student 360 ---------------- */
+.pycrm-student-detail {
+  min-width: 0;
+}
+
+.pycrm-student-detail > div {
+  min-width: 0;
+}
+
+.pycrm-student-detail .grid.grid-cols-4 {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pycrm-student-detail .grid.grid-cols-4::-webkit-scrollbar {
+  display: none;
+}
+
+.pycrm-student-detail .grid.grid-cols-4 > button {
+  min-width: 92px;
+}
+
+.pycrm-student-detail input,
+.pycrm-student-detail select,
+.pycrm-student-detail textarea {
+  max-width: 100%;
+}
+
+/* ---------------- Public portal ---------------- */
+.pycrm-public {
+  min-width: 0;
+}
+
+.pycrm-public > div:first-child {
+  min-width: 0;
+}
+
+.pycrm-public > div:first-child > div:last-child {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pycrm-public > div:first-child > div:last-child::-webkit-scrollbar {
+  display: none;
+}
+
+.pycrm-public > div:first-child > div:last-child button {
+  white-space: nowrap;
+}
+
+.pycrm-public form {
+  min-width: 0;
+}
+
+.pycrm-public input,
+.pycrm-public select,
+.pycrm-public textarea {
+  max-width: 100%;
+}
+
+/* ---------------- Modals ---------------- */
+.pycrm-app .fixed.inset-0 {
+  overscroll-behavior: contain;
+}
+
+.pycrm-app .fixed.inset-0 > .bg-bg-card {
+  width: min(100%, 720px);
+}
+
+/* ---------------- Better focus accessibility ---------------- */
+.pycrm-app button:focus-visible,
+.pycrm-app input:focus-visible,
+.pycrm-app select:focus-visible,
+.pycrm-app textarea:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent-orange) 75%, white);
+  outline-offset: 2px;
+}
+
+/* ---------------- Small-screen refinement ---------------- */
+@media (max-width: 1023px) {
+  .pycrm-dashboard,
+  .pycrm-page {
+    padding-top: 14px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero {
+    min-height: 210px;
+  }
+
+  .pycrm-dashboard .pycrm-hero > .absolute:nth-child(2) {
+    width: 72%;
+    opacity: .10;
+  }
+
+  .pycrm-dashboard .pycrm-score-card {
+    width: min(100%, 260px);
+  }
+}
+
+@media (max-width: 767px) {
+  .pycrm-app main {
+    padding-inline: 10px !important;
+  }
+
+  .pycrm-dashboard {
+    gap: 14px !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero {
+    padding: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero h1 {
+    font-size: clamp(24px, 7vw, 31px) !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero p {
+    max-width: 95%;
+  }
+
+  .pycrm-dashboard .pycrm-mini-chip {
+    min-width: 0;
+    flex: 1 1 130px;
+  }
+
+  .pycrm-dashboard .pycrm-score-card {
+    width: 100%;
+  }
+
+  .pycrm-dashboard .pycrm-kpi {
+    min-height: 104px;
+    padding: 12px;
+  }
+
+  .pycrm-dashboard .pycrm-kpi-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pycrm-action-card {
+    min-height: 66px;
+  }
+
+  .pycrm-dashboard .pycrm-panel {
+    border-radius: 15px;
+  }
+
+  .pycrm-dashboard .pycrm-panel-head h3 {
+    font-size: 13px;
+  }
+
+  .pycrm-dashboard .pycrm-conversion-panel .grid.grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pycrm-dashboard .pycrm-search-row {
+    gap: 8px;
+  }
+
+  .pycrm-dashboard .pycrm-candidate {
+    min-height: 70px;
+  }
+
+  .pycrm-reports,
+  .pycrm-direct-placement,
+  .pycrm-backup,
+  .pycrm-public,
+  .pycrm-student-detail {
+    padding-inline: 0 !important;
+  }
+
+  .pycrm-reports > .flex.flex-col.lg\:flex-row > div:first-child {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pycrm-public > div:first-child > div:last-child {
+    width: 100%;
+  }
+
+  .pycrm-public > div:first-child > div:last-child button {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .pycrm-app main {
+    padding-inline: 7px !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero {
+    padding: 15px !important;
+  }
+
+  .pycrm-dashboard .pycrm-hero h1 {
+    font-size: 23px !important;
+  }
+
+  .pycrm-dashboard .pycrm-mini-chip {
+    flex-basis: 100%;
+  }
+
+  .pycrm-dashboard .pycrm-kpi {
+    min-height: 96px;
+  }
+
+  .pycrm-dashboard .pycrm-kpi .text-xl {
+    font-size: 17px;
+  }
+
+  .pycrm-action-card {
+    padding: 10px;
+  }
+
+  .pycrm-student-detail .grid.grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pycrm-public .grid.grid-cols-1.sm\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
